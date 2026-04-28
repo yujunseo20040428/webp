@@ -11,7 +11,7 @@
             --card-bg: #1e293b;
             --text-main: #f1f5f9;
             --text-sub: #94a3b8;
-            --accent-color: #38bdf8; /* 사이언 블루 */
+            --accent-color: #38bdf8;
             --transition: all 0.3s ease;
         }
 
@@ -27,7 +27,7 @@
             color: var(--text-main);
             line-height: 1.6;
             overflow-x: hidden;
-            font-size: 0.9rem; /* 전체 글자 크기 한 단계 더 축소 */
+            font-size: 0.9rem;
         }
 
         a { text-decoration: none; color: inherit; }
@@ -87,7 +87,7 @@
         }
 
         .hero h1 {
-            font-size: 2.5rem; /* 글자 크기 축소 */
+            font-size: 2.5rem;
             margin-bottom: 1rem;
             font-weight: 800;
             line-height: 1.2;
@@ -111,7 +111,77 @@
         }
         .section-title span { color: var(--accent-color); }
 
-        /* --- 프로젝트 섹션 (카드 레이아웃) --- */
+        /* --- Vision 섹션 --- */
+        .vision-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .vision-main-card {
+            background: rgba(30, 41, 59, 0.5);
+            padding: 3rem;
+            border-radius: 20px;
+            border: 1px solid rgba(56, 189, 248, 0.1);
+            margin-bottom: 2rem;
+        }
+
+        .vision-text p {
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+            line-height: 1.8;
+            color: var(--text-main);
+            word-break: keep-all;
+        }
+
+        /* 학기 목표 강조 박스 */
+        .semester-goal-box {
+            background: linear-gradient(90deg, rgba(56, 189, 248, 0.1) 0%, rgba(30, 41, 59, 0) 100%);
+            border-left: 3px solid var(--accent-color);
+            padding: 1.5rem 2rem;
+            margin: 2.5rem 0;
+        }
+
+        .semester-goal-box h4 {
+            color: var(--accent-color);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 0.5rem;
+        }
+
+        .semester-goal-box p {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--text-main);
+            margin: 0;
+        }
+
+        .vision-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .vision-card {
+            background: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: 12px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .vision-card h4 {
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+            color: var(--accent-color);
+        }
+
+        .vision-card p {
+            font-size: 0.8rem;
+            color: var(--text-sub);
+        }
+
+        /* --- 프로젝트 섹션 --- */
         .project-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -125,7 +195,7 @@
             transition: var(--transition);
             border: 1px solid rgba(255, 255, 255, 0.05);
             display: flex;
-            flex-direction: column; /* 카드의 높이를 내용에 맞게 조절 */
+            flex-direction: column;
         }
 
         .project-card:hover {
@@ -149,114 +219,35 @@
             transition: 0.5s;
         }
 
-        .project-card:hover img {
-            opacity: 1;
-            transform: scale(1.05);
-        }
+        .project-card:hover img { opacity: 1; transform: scale(1.05); }
 
-        .project-info { 
-            padding: 1.5rem;
-            flex-grow: 1; /* 설명이 길어져도 카드가 늘어남 */
-        }
-
-        .project-info h3 {
-            font-size: 1.1rem;
-            margin-bottom: 0.8rem;
-            color: var(--accent-color);
-        }
-
-        .project-info p {
-            font-size: 0.85rem;
-            color: var(--text-sub);
-            margin-bottom: 1.5rem;
-            line-height: 1.6;
-            /* 고정 높이를 제거하여 짤림 현상 방지 */
-            word-break: keep-all;
-        }
+        .project-info { padding: 1.5rem; flex-grow: 1; }
+        .project-info h3 { font-size: 1.1rem; margin-bottom: 0.8rem; color: var(--accent-color); }
+        .project-info p { font-size: 0.85rem; color: var(--text-sub); margin-bottom: 1.5rem; line-height: 1.6; word-break: keep-all; }
 
         .project-tags { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: auto; }
-        .tag {
-            font-size: 0.7rem;
-            background: rgba(56, 189, 248, 0.1);
-            color: var(--accent-color);
-            padding: 2px 8px;
-            border-radius: 4px;
-            font-weight: 600;
-        }
+        .tag { font-size: 0.7rem; background: rgba(56, 189, 248, 0.1); color: var(--accent-color); padding: 2px 8px; border-radius: 4px; font-weight: 600; }
 
         /* --- 연락처 섹션 --- */
-        .contact-content { 
-            text-align: center; 
-            max-width: 600px;
-            margin: 0 auto;
-        }
-        
-        .contact-list {
-            margin-top: 3rem;
-            display: flex;
-            flex-direction: column;
-            gap: 1.2rem;
-            align-items: center;
-        }
+        .contact-content { text-align: center; max-width: 600px; margin: 0 auto; }
+        .contact-list { margin-top: 3rem; display: flex; flex-direction: column; gap: 1.2rem; align-items: center; }
+        .contact-box { background: var(--card-bg); padding: 1rem 2rem; border-radius: 8px; width: 100%; border: 1px solid rgba(255, 255, 255, 0.05); transition: 0.3s; display: flex; justify-content: space-between; align-items: center; }
+        .contact-box:hover { border-color: var(--accent-color); }
+        .contact-label { font-size: 0.75rem; color: var(--accent-color); text-transform: uppercase; font-weight: 700; }
+        .contact-value { font-size: 0.9rem; font-family: 'monospace'; color: var(--text-main); }
 
-        .contact-box {
-            background: var(--card-bg);
-            padding: 1rem 2rem;
-            border-radius: 8px;
-            width: 100%;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            transition: 0.3s;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .contact-box:hover {
-            border-color: var(--accent-color);
-        }
-
-        .contact-label {
-            font-size: 0.75rem;
-            color: var(--accent-color);
-            text-transform: uppercase;
-            font-weight: 700;
-        }
-
-        .contact-value {
-            font-size: 0.9rem;
-            font-family: 'monospace'; /* 주소 강조를 위해 모노스페이스 사용 */
-            color: var(--text-main);
-        }
-
-        /* --- 푸터 --- */
-        footer {
-            text-align: center;
-            padding: 50px;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-        }
-        .footer-name {
-            font-weight: 800;
-            letter-spacing: 2px;
-            color: var(--text-sub);
-            font-size: 0.75rem;
-            opacity: 0.5;
-        }
+        footer { text-align: center; padding: 50px; border-top: 1px solid rgba(255, 255, 255, 0.05); }
+        .footer-name { font-weight: 800; letter-spacing: 2px; color: var(--text-sub); font-size: 0.75rem; opacity: 0.5; }
 
         /* --- 애니메이션 --- */
-        .reveal {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.7s ease-out;
-        }
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
+        .reveal { opacity: 0; transform: translateY(20px); transition: all 0.7s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
 
         @media (max-width: 768px) {
             .hero h1 { font-size: 2rem; }
             section { padding: 80px 5%; }
             .nav-links { display: none; }
+            .vision-grid { grid-template-columns: 1fr; }
             .contact-box { flex-direction: column; gap: 0.5rem; text-align: center; }
         }
     </style>
@@ -267,6 +258,7 @@
         <div class="logo">JUNSEO.DEV</div>
         <ul class="nav-links">
             <li><a href="#home">Home</a></li>
+            <li><a href="#vision">Vision</a></li>
             <li><a href="#projects">Projects</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
@@ -278,18 +270,54 @@
         <p>복잡함을 덜어내고 본질적인 즐거움을 전달하는 게임 개발자 유준서입니다. 몰입감 있는 세계관과 최적화된 플레이 경험을 추구합니다.</p>
     </section>
 
+    <!-- To-be 모델 & 학기 목표 섹션 -->
+    <section id="vision" class="reveal">
+        <h2 class="section-title">Future <span>Vision</span></h2>
+        <div class="vision-container">
+            <div class="vision-main-card">
+                <div class="vision-text">
+                    <p>
+                        AI 기술의 발전에 발맞춰, 이를 적극적으로 활용하는 <strong>1인 인디 게임 개발자</strong>로 성장하는 것을 목표로 합니다. 
+                        유년기부터 쌓아온 다양한 게임 경험을 바탕으로 시장의 트렌드를 읽고, 게임의 구조와 로직을 깊이 있게 이해하며 시스템 설계 능력을 다져왔습니다.
+                    </p>
+                    <p>
+                        단순한 캐주얼 게임을 넘어, AI를 통한 개발 효율 극대화와 유저의 니즈를 관통하는 몰입감 있는 스토리텔링을 결합하여 <strong>시대를 대표할 수 있는 완성도 높은 작품</strong>을 만들고자 합니다.
+                    </p>
+                </div>
+
+                <!-- 학기 목표 추가 부분 -->
+                <div class="semester-goal-box">
+                    <h4>Current Semester Goal</h4>
+                    <p>실제 게임 시장에서 영향력을 발휘할 수 있는 게임 개발 및 정식 출시</p>
+                </div>
+            </div>
+            
+            <div class="vision-grid">
+                <div class="vision-card">
+                    <h4>AI Efficiency</h4>
+                    <p>AI를 활용한 고효율<br>인디 개발 시스템 구축</p>
+                </div>
+                <div class="vision-card">
+                    <h4>Market Impact</h4>
+                    <p>트렌드를 선도하고<br>유저를 매료시키는 게임성</p>
+                </div>
+                <div class="vision-card">
+                    <h4>Immersion</h4>
+                    <p>깊이 있는 스토리와<br>독보적인 몰입감 제공</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section id="projects">
         <h2 class="section-title">My <span>Projects</span></h2>
         <div class="project-grid">
-            
-            <!-- 프로젝트 1: 로그라이크 (이미지 2번 적용) -->
+            <!-- 프로젝트 1 -->
             <div class="project-card reveal">
-                <div class="project-img-wrapper">
-                    <img src="project1.png" alt="Legacy Crawler">
-                </div>
+                <div class="project-img-wrapper"><img src="project1.png" alt="Legacy Crawler"></div>
                 <div class="project-info">
                     <h3>Legacy Crawler</h3>
-                    <p>Nethack의 정통 룰셋을 Unity 환경으로 이식한 로그라이크 게임입니다. 절차적 맵 생성과 깊이 있는 턴제 전투 시스템을 유기적으로 결합하여 매 판 새로운 전략적 재미를 제공합니다.</p>
+                    <p>Nethack의 정통 룰셋을 Unity 환경으로 이식한 로그라이크 게임입니다. 절차적 맵 생성과 깊이 있는 턴제 전투 시스템을 유기적으로 결합했습니다.</p>
                     <div class="project-tags">
                         <span class="tag">Unity</span>
                         <span class="tag">C#</span>
@@ -298,14 +326,12 @@
                 </div>
             </div>
 
-            <!-- 프로젝트 2: 레이캐스팅 (이미지 3번 적용) -->
+            <!-- 프로젝트 2 -->
             <div class="project-card reveal">
-                <div class="project-img-wrapper">
-                    <img src="project2.png" alt="Ether Vision">
-                </div>
+                <div class="project-img-wrapper"><img src="project2.png" alt="Ether Vision"></div>
                 <div class="project-info">
                     <h3>Ether Vision</h3>
-                    <p>레이캐스팅 기법을 응용하여 시각적 한계를 넘어서는 몽환적인 탐험 게임입니다. 고유한 라이팅 셰이더 최적화를 통해 몽환적인 그래픽과 안정적인 성능을 동시에 확보했습니다.</p>
+                    <p>레이캐스팅 기법을 응용하여 시각적 한계를 넘어서는 몽환적인 탐험 게임입니다. 고유한 라이팅 셰이더 최적화를 통해 안정적인 성능을 확보했습니다.</p>
                     <div class="project-tags">
                         <span class="tag">Unity</span>
                         <span class="tag">Raycasting</span>
@@ -314,14 +340,12 @@
                 </div>
             </div>
 
-            <!-- 프로젝트 3: 캐주얼 모바일 (이미지 1번 적용) -->
+            <!-- 프로젝트 3 -->
             <div class="project-card reveal">
-                <div class="project-img-wrapper">
-                    <img src="project3.png" alt="Pop & Dash">
-                </div>
+                <div class="project-img-wrapper"><img src="project3.png" alt="Pop & Dash"></div>
                 <div class="project-info">
                     <h3>Pop & Dash</h3>
-                    <p>직관적인 원터치 컨트롤로 조작하는 캐주얼 모바일 프로젝트입니다. 엄격한 리소스 관리와 드로우 콜 최적화를 통해 다양한 사양의 모바일 기기에서 60FPS를 유지하도록 설계했습니다.</p>
+                    <p>직관적인 원터치 컨트롤 캐주얼 모바일 프로젝트입니다. 리소스 관리와 드로우 콜 최적화를 통해 저사양 기기에서도 60FPS를 유지합니다.</p>
                     <div class="project-tags">
                         <span class="tag">Mobile</span>
                         <span class="tag">Optimization</span>
@@ -329,7 +353,6 @@
                     </div>
                 </div>
             </div>
-
         </div>
     </section>
 
@@ -337,15 +360,11 @@
         <h2 class="section-title">Contact <span>Me</span></h2>
         <div class="contact-content">
             <p>프로젝트 협업 및 기술적인 대화는 언제든 환영합니다.</p>
-            
             <div class="contact-list">
-                <!-- 이메일 정보 표시 -->
                 <div class="contact-box">
                     <span class="contact-label">Email</span>
                     <a href="mailto:junseo040428@gmail.com" class="contact-value">junseo040428@gmail.com</a>
                 </div>
-                
-                <!-- 깃허브 정보 표시 -->
                 <div class="contact-box">
                     <span class="contact-label">GitHub</span>
                     <a href="https://github.com/yujunseo20040428" target="_blank" class="contact-value">github.com/yujunseo20040428</a>
@@ -359,13 +378,11 @@
     </footer>
 
     <script>
-        // 1. 네비게이션 효과
         const navbar = document.getElementById('navbar');
         window.addEventListener('scroll', () => {
             navbar.classList.toggle('scrolled', window.scrollY > 50);
         });
 
-        // 2. 등장 애니메이션
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) entry.target.classList.add('active');
@@ -374,7 +391,6 @@
 
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-        // 3. 부드러운 스크롤
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
